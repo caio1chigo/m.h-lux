@@ -8,8 +8,25 @@
   <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
 </head>
 <body>
-
-<header>
+  <a
+  class="whatsapp-float"
+  href="https://wa.me/5561986474665?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20as%20peças."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Falar com a M.H Lux pelo WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path fill="currentColor" d="M16.02 3C8.84 3 3 8.84 3 16.02c0 2.3.6 4.55 1.74 6.53L3 29l6.64-1.7A13 13 0 1 0 16.02 3Zm0 23.65c-2.08 0-4.1-.56-5.86-1.62l-.42-.25-3.94 1.01 1.05-3.84-.28-.45a10.62 10.62 0 1 1 9.45 5.15Zm5.82-7.96c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.52-.16-.74.16-.22.32-.85 1.05-1.04 1.27-.19.21-.39.24-.71.08-1.91-.96-3.17-1.71-4.43-3.88-.33-.57.33-.53.95-1.77.11-.22.06-.41-.03-.57-.08-.16-.74-1.78-1.01-2.43-.27-.65-.54-.56-.74-.57h-.63c-.22 0-.57.08-.87.41-.3.32-1.14 1.11-1.14 2.7s1.17 3.13 1.33 3.35c.16.21 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.9-.78 2.17-1.54.27-.76.27-1.42.19-1.55-.08-.14-.3-.22-.62-.38Z"/>
+  </svg>
+  <span>WhatsApp</span>
+</a>
+  <div class="announce-bar" id="announceBar">
+  <div class="announce-track">
+    <span>✓  Atendimento rápido pelo WhatsApp</span>
+    <span>✓  Novidades toda semana</span>
+    <span>✓  Grades completas PP–GG</span>
+  </div>
+</div>
+<header class="site-header" id="siteHeader">
   <div class="header-inner">
     <a class="logo" href="#">
       <img src="mhlux-logo3.png" alt="Logo M.H Lux" width="46" height="46">
@@ -18,42 +35,65 @@
         <span>Multimarcas</span>
       </div>
     </a>
-
-    <nav class="header-nav">
-      <a href="#produtos">Catálogo</a>
+    <nav class="header-nav" id="headerNav">
+      <a href="#produtos" data-tab-link="roupas">Catálogo</a>
+      <a href="#produtos" data-tab-link="acessorios">Acessórios</a>
       <a href="#contato">Contato</a>
     </nav>
-
     <div class="header-actions">
-      <button class="theme-toggle" data-theme-toggle aria-label="Alternar tema">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <button
+        class="icon-btn"
+        id="searchToggle"
+        type="button"
+        aria-label="Abrir busca"
+        aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="M21 21l-4.35-4.35"></path>
+        </svg>
+      </button>
+      <button
+        class="theme-toggle"
+        data-theme-toggle
+        type="button"
+        aria-label="Alternar tema">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
       </button>
     </div>
   </div>
-</header>
-
-<section class="section hero-section">
-  <div class="container">
-    <div class="hero">
-      <div class="hero-text">
-        <span class="hero-tag">Moda selecionada</span>
-        <h1>M.H Lux Multimarcas</h1>
-        <p>Peças cuidadosamente selecionadas para quem valoriza estilo, qualidade e presença. Um catálogo elegante para clientes que buscam roupas e acessórios com personalidade.</p>
-
-        <div class="hero-mini-points">
-          <span>Curadoria premium</span>
-          <span>Atendimento personalizado</span>
-          <span>Pedidos por WhatsApp</span>
-        </div>
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel-inner">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="M21 21l-4.35-4.35"></path>
+        </svg>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Buscar por nome do produto..."
+          autocomplete="off">
       </div>
-
-      <div class="hero-img hero-logo-box">
-        <img src="mhlux-logo3.png" alt="Logo M.H Lux" width="600" height="800" loading="lazy">
+      <div class="filter-box">
+        <label for="categoryFilter" class="sr-only">
+          Filtrar categoria
+        </label>
+        <select id="categoryFilter">
+          <option value="all">Todas as categorias</option>
+          <option value="Moletom">Moletons</option>
+          <option value="Camisas">Camisas</option>
+          <option value="Bermudas">Bermudas</option>
+          <option value="Bonés">Bonés</option>
+          <option value="Óculos">Óculos</option>
+          <option value="Bolsas">Bolsas</option>
+          <option value="Relógios">Relógios</option>
+        </select>
       </div>
     </div>
   </div>
-</section>
-
+</header>
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat"><span class="stat-num">+200</span><span class="stat-label">Peças disponíveis</span></div>
@@ -62,361 +102,973 @@
     <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Atendimento dedicado</span></div>
   </div>
 </div>
-
-<section class="section" id="produtos">
+<section class="categories-section">
   <div class="container">
+    <div class="section-header">
+      <p class="section-label">Explore</p>
+      <h2 class="section-title">Compre por categoria</h2>
+    </div>
+    <div class="categories-grid">
+      <a href="#produtos" class="category-card" data-tab-link="roupas" data-category-target="Moletom" style="background-image: url('moletom.jpg');">
+        <span class="category-name">Moletons</span>
+        <span class="category-link">Ver mais →</span>
+      </a>
+      <a href="#produtos" class="category-card" data-tab-link="roupas" data-category-target="Camisas" style="background-image: url('camisa-1.jpg');">
+        <span class="category-name">Camisas</span>
+        <span class="category-link">Ver mais →</span>
+      </a>
+      <a href="#produtos" class="category-card" data-tab-link="roupas" data-category-target="Bermudas" style="background-image: url('bermuda.jpg');">
+        <span class="category-name">Bermudas</span>
+        <span class="category-link">Ver mais →</span>
+      </a>
+      <a href="#produtos" class="category-card" data-tab-link="roupas" data-category-target="Bonés" style="background-image: url('bone.jpg');">
+        <span class="category-name">Bonés</span>
+        <span class="category-link">Ver mais →</span>
+      </a>
+      <a href="#produtos" class="category-card" data-tab-link="acessorios" data-category-target="Óculos" style="background-image: url('acessorio.jpg');">
+        <span class="category-name">Acessórios</span>
+        <span class="category-link">Ver mais →</span>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="trust-bar">
+  <div class="container trust-inner">
+    <div class="trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 3h13v13H3zM16 8h4l3 4v4h-7V8z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/>
+      </svg>
+      <div>
+        <strong>Entrega combinada</strong>
+        <span>Direto com o vendedor</span>
+      </div>
+    </div>
+    <div class="trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+      </svg>
+      <div>
+        <strong>Atendimento direto</strong>
+        <span>Sem intermediários</span>
+      </div>
+    </div>
+    <div class="trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+      </svg>
+      <div>
+        <strong>Pagamento flexível</strong>
+        <span>Combine a forma ideal</span>
+      </div>
+    </div>
+    <div class="trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12 19.79 19.79 0 0 1 1.07 3.18 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <div>
+        <strong>Suporte via WhatsApp</strong>
+        <span>Resposta rápida</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="produtos">
+  <div>
     <div class="catalog-shell">
-      <div class="section-header catalog-header">
-        <div>
-          <p class="section-label">Catálogo</p>
-          <h2 class="section-title">Peças em destaque</h2>
-          <p class="section-subtitle">Encontre roupas e acessórios com mais rapidez.</p>
-        </div>
-
-        <div class="catalog-tabs" role="tablist" aria-label="Categorias principais">
-          <button class="catalog-tab active" type="button" data-tab="roupas">Roupas</button>
-          <button class="catalog-tab" type="button" data-tab="acessorios">Acessórios</button>
-        </div>
-      </div>
-
-      <div class="catalog-toolbar">
-        <div class="search-box">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="M21 21l-4.35-4.35"></path>
-          </svg>
-          <input type="search" id="searchInput" placeholder="Buscar por nome do produto...">
-        </div>
-
-        <div class="filter-box">
-          <label for="categoryFilter" class="sr-only">Filtrar categoria</label>
-          <select id="categoryFilter">
-            <option value="all">Todas as categorias</option>
-            <option value="Moletom">Moletons</option>
-            <option value="Camisas">Camisas</option>
-            <option value="Bermudas">Bermudas</option>
-            <option value="Bonés">Bonés</option>
-            <option value="Óculos">Óculos</option>
-            <option value="Bolsas">Bolsas</option>
-            <option value="Relógios">Relógios</option>
-          </select>
-        </div>
-      </div>
-
+<section class="catalog-banner">
+  <div class="catalog-slides" aria-hidden="true">
+    <div class="catalog-slide" style="background-image: url('camisa-1.jpg');"></div>
+    <div class="catalog-slide" style="background-image: url('camisa-2.jpg');"></div>
+    <div class="catalog-slide" style="background-image: url('camisa-3.jpg');"></div>
+  </div>
+  <div class="catalog-banner-overlay"></div>
+  <div class="catalog-banner-content">
+    <p class="catalog-banner-label">Nova coleção</p>
+    <h2 class="catalog-banner-title">
+      Confira a nova coleção da loja
+    </h2>
+    <div class="catalog-banner-actions">
+      <a
+        href="https://wa.me/5561986474665?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20nova%20coleção."
+        class="catalog-banner-btn catalog-banner-btn-primary"
+        target="_blank"
+        rel="noopener noreferrer">
+        Comprar agora
+      </a>
+      <a href="#produtos" class="catalog-banner-btn catalog-banner-btn-secondary">
+        Ver coleção
+      </a>
+    </div>
+  </div>
+</section>
       <div class="results-bar">
         <p id="resultsCount">Mostrando todos os produtos.</p>
       </div>
-
       <div class="catalog-page active" id="roupas">
         <div class="products-grid">
-
-          <div class="product-card" data-page="roupas" data-category="Moletom" data-name="Moletom Vans off the Wall">
-            <div class="product-img">
-              <img src="moletom.jpg" alt="Moletom Vans off the Wall" width="400" height="533" loading="lazy">
-              <span class="product-category">Moletom</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Moletom Vans off the Wall</h3>
-              <p class="product-desc">Corte clássico, tecido premium com caimento impecável.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 289,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span><span class="size-chip">GG</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Moletom Vans off the Wall.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Moletom" data-name="Moletom Jordan Air">
-            <div class="product-img">
-              <img src="moletom-2.jpg" alt="Moletom Jordan Air" width="400" height="533" loading="lazy">
-              <span class="product-category">Moletom</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Moletom Jordan Air</h3>
-              <p class="product-desc">Corte clássico, tecido premium com caimento impecável.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 289,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span><span class="size-chip">GG</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Moletom Jordan Air.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Moletom" data-name="Moletom Nike Air Preto">
-            <div class="product-img">
-              <img src="moletom-3.jpg" alt="Moletom Nike Air Preto" width="400" height="533" loading="lazy">
-              <span class="product-category">Moletom</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Moletom Nike Air Preto</h3>
-              <p class="product-desc">Corte clássico, tecido premium com caimento impecável.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 289,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span><span class="size-chip">GG</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Moletom Nike Air Preto.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Camisas" data-name="Camiseta New York Yankees">
-            <div class="product-img">
-              <img src="camisa-1.jpg" alt="Camiseta New York Yankees" width="400" height="533" loading="lazy">
-              <span class="product-category">Camisas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Camiseta New York Yankees</h3>
-              <p class="product-desc">Corte clássico, tecido premium com caimento impecável.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 289,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span><span class="size-chip">GG</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camiseta New York Yankees.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Camisas" data-name="Camiseta New York Yankees off White">
-            <div class="product-img">
-              <img src="camisa-2.jpg" alt="Camiseta New York Yankees off White" width="400" height="533" loading="lazy">
-              <span class="product-category">Camisas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Camiseta New York Yankees off White</h3>
-              <p class="product-desc">Corte clássico, tecido premium com caimento impecável.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 289,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span><span class="size-chip">GG</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camiseta New York Yankees off White.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Camisas" data-name="Camisa Corinthians">
-            <div class="product-img">
-              <img src="camisa-3.jpg" alt="Camisa Corinthians" width="400" height="533" loading="lazy">
-              <span class="product-category">Camisas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Camisa Corinthians</h3>
-              <p class="product-desc">Modelagem slim com tecido de qualidade superior.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 199,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">36</span><span class="size-chip">38</span><span class="size-chip">40</span><span class="size-chip">42</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camisa Corinthians.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Camisas" data-name="Camisa Palm Angels">
-            <div class="product-img">
-              <img src="camisa-4.jpg" alt="Camisa Palm Angels" width="400" height="533" loading="lazy">
-              <span class="product-category">Camisas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Camisa Palm Angels</h3>
-              <p class="product-desc">Leveza e sofisticação para qualquer ocasião.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 149,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camisa Palm Angels.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Camisas" data-name="Camiseta Nike">
-            <div class="product-img">
-              <img src="camisa-5.jpg" alt="Camiseta Nike" width="400" height="533" loading="lazy">
-              <span class="product-category">Camisas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Camiseta Nike</h3>
-              <p class="product-desc">Corte clássico, tecido premium com caimento impecável.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 289,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span><span class="size-chip">GG</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camiseta Nike.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Camisas" data-name="Camisa Seleção">
-            <div class="product-img">
-              <img src="camisa-6.webp" alt="Camisa Seleção" width="400" height="533" loading="lazy">
-              <span class="product-category">Camisas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Camisa Seleção</h3>
-              <p class="product-desc">Leveza e sofisticação para qualquer ocasião.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 149,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camisa Seleção.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Bermudas" data-name="Bermuda Nike Verde Escura">
-            <div class="product-img">
-              <img src="bermuda.jpg" alt="Bermuda Nike Verde Escura" width="400" height="533" loading="lazy">
-              <span class="product-category">Bermudas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Bermuda Nike Verde Escura</h3>
-              <p class="product-desc">Leveza e sofisticação para qualquer ocasião.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 149,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Bermuda Nike Verde Escura.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Bermudas" data-name="Bermuda North Face">
-            <div class="product-img">
-              <img src="bermuda-2.jpg" alt="Bermuda North Face" width="400" height="533" loading="lazy">
-              <span class="product-category">Bermudas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Bermuda North Face</h3>
-              <p class="product-desc">Design moderno com caimento sob medida e acabamento refinado.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 349,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span><span class="size-chip">GG</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Bermuda North Face.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Bermudas" data-name="Bermuda Nike Age">
-            <div class="product-img">
-              <img src="bermuda-3.jpg" alt="Bermuda Nike Age" width="400" height="533" loading="lazy">
-              <span class="product-category">Bermudas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Bermuda Nike Age</h3>
-              <p class="product-desc">Design moderno com caimento sob medida e acabamento refinado.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 179,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">P</span><span class="size-chip">M</span><span class="size-chip">G</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Bermuda Nike Age.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Bonés" data-name="Boné New York Yankees">
-            <div class="product-img">
-              <img src="bone.jpg" alt="Boné New York Yankees" width="400" height="533" loading="lazy">
-              <span class="product-category">Bonés</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Boné New York Yankees</h3>
-              <p class="product-desc">Design retrô com estampa exclusiva e tecido durável.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 159,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">Único</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Boné New York Yankees.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="roupas" data-category="Óculos" data-name="Óculos Urban Gold">
-            <div class="product-img">
-              <img src="acessorio.jpg" alt="Óculos Urban Gold" width="400" height="533" loading="lazy">
-              <span class="product-category">Óculos</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Óculos Urban Gold</h3>
-              <p class="product-desc">Design retrô com estampa exclusiva e tecido durável.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 159,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">Único</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Óculos Urban Gold.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-        </div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Moletom"
+  data-name="Moletom Vans off the Wall">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom.jpg,moletom-2.jpg,moletom-3.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="moletom.jpg"
+      alt="Moletom Vans off the Wall"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Moletom</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button
+        type="button"
+        class="gallery-dot active"
+        aria-label="Foto 1">
+      </button>
+      <button
+        type="button"
+        class="gallery-dot"
+        aria-label="Foto 2">
+      </button>
+      <button
+        type="button"
+        class="gallery-dot"
+        aria-label="Foto 3">
+      </button>
+      <button
+        type="button"
+        class="gallery-dot"
+        aria-label="Foto 4">
+      </button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Moletom Vans off the Wall</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
       </div>
-
-      <div class="catalog-page" id="acessorios">
-        <div class="products-grid">
-
-          <div class="product-card" data-page="acessorios" data-category="Bolsas" data-name="Bolsa Premium Nude">
-            <div class="product-img">
-              <img src="camisa-1.jpg" alt="Bolsa Premium Nude" width="400" height="533" loading="lazy">
-              <span class="product-category">Bolsas</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Bolsa Premium Nude</h3>
-              <p class="product-desc">Acabamento elegante e estrutura refinada para compor looks sofisticados.</p>
-              <div class="product-footer">
-                <span class="product-price">R$ 239,90</span>
-                <div class="product-sizes">
-                  <span class="size-chip">Único</span>
-                </div>
-              </div>
-              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse no acessório Bolsa Premium Nude.">
-                Pedir no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <div class="product-card" data-page="acessorios" data-category="Bonés" data-name="Boné Street Black">
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Moletom Vans off the Wall.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Moletom"
+  data-name="Moletom Jordan Air">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-2.jpg,moletom.jpg,moletom-3.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="moletom-2.jpg"
+      alt="Moletom Jordan Air"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Moletom</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Moletom Jordan Air</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Moletom Jordan Air.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div
+  class="product-card"
+  data-page="roupas"
+  data-category="Moletom"
+  data-name="Moletom Nike Air Preto">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="moletom-3.jpg"
+      alt="Moletom Nike Air Preto"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Moletom</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Moletom Nike Air Preto</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Moletom Nike Air Preto.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Camisas"
+  data-name="Camisa New York Yankees">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="camisa-1.jpg"
+      alt="Camisa New York Yankees"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Camisas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Camisa New York Yankees</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camisa New York Yankees.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Camisas"
+  data-name="Camisa New York Yankees Off-White">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="camisa-2.jpg"
+      alt="Camisa New York Yankees Off-White"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Camisas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Camisa New York Yankees Off-White</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camisa New York Yankees Off-White.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Camisas"
+  data-name="Camisa Corinthians">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="camisa-3.jpg"
+      alt="Camisa Corinthians"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Camisas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Camisa Corinthians</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camisa Corinthians.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Camisas"
+  data-name="Camisa Palm Angels">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="camisa-4.jpg"
+      alt="Camisa Palm Angels"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Camisas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Camisa Palm Angels</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camisa Palm Angels.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div><div class="product-card"
+  data-page="roupas"
+  data-category="Camisas"
+  data-name="Camisa Nike Verde">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="camisa-5.jpg"
+      alt="Camisa Nike Verde"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Camisas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Camisa Nike Verde</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camisa Nike Verde.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Camisas"
+  data-name="Camisa Seleção Brasileira">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="camisa-6.webp"
+      alt="Camisa Seleção Brasileira"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Camisas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Camisa Seleção Brasileira</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Camisa Seleção Brasileira.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Bermudas"
+  data-name="Bermuda North Face">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="bermuda-2.jpg"
+      alt="Bermuda North Face"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Bermudas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Bermuda North Face</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Bermuda North Face.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Bermudas"
+  data-name="Bermuda Nike Verde">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="bermuda.jpg"
+      alt="Bermuda Nike Verde"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Bermudas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Bermuda Nike Verde</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Bermuda Nike Verde.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Bermudas"
+  data-name="Bermuda Nike Age">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="bermuda-3.jpg"
+      alt="Bermuda Nike Age"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Bermudas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Bermuda Nike Age</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Bermuda Nike Age.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Bonés"
+  data-name="Boné New York Yankees">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="bone.jpg"
+      alt="Boné New York Yankees"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Bonés</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Boné New York Yankees</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Boné New York Yankees.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card"
+  data-page="roupas"
+  data-category="Oculos"
+  data-name="Óculos Urban Gold">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="moletom-3.jpg,moletom.jpg,moletom-2.jpg,oculos.jpg">
+    <img
+      class="product-main-image"
+      src="oculos.jpg"
+      alt="Óculos Urban Gold"
+      width="400"
+      height="533"
+      loading="lazy">
+    <span class="product-category">Óculos</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 4"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Óculos Urban Gold</h3>
+    <p class="product-desc">
+      Corte clássico, tecido premium com caimento impecável.
+    </p>
+    <div class="product-footer">
+      <span class="product-price">R$ 289,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">P</span>
+        <span class="size-chip">M</span>
+        <span class="size-chip">G</span>
+        <span class="size-chip">GG</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse na peça Óculos Urban Gold.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card" data-page="acessorios" data-category="Bolsas" data-name="Bolsa Premium Nude">
+  <div
+    class="product-img product-gallery"
+    data-gallery-images="camisa-1.jpg,camisa-2.jpg,camisa-3.jpg">
+    <img
+      class="product-main-image"
+      src="camisa-1.jpg"
+      alt="Bolsa Premium Nude"
+      width="400"
+      height="533"
+      loading="lazy">
+<span class="product-category">Bolsas</span>
+    <button
+      class="gallery-control gallery-prev"
+      type="button"
+      aria-label="Ver foto anterior">
+      ‹
+    </button>
+    <button
+      class="gallery-control gallery-next"
+      type="button"
+      aria-label="Ver próxima foto">
+      ›
+    </button>
+    <div class="gallery-dots" aria-label="Fotos do produto">
+      <button type="button" class="gallery-dot active" aria-label="Foto 1"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 2"></button>
+      <button type="button" class="gallery-dot" aria-label="Foto 3"></button>
+    </div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Bolsa Premium Nude</h3>
+    <p class="product-desc">Acabamento elegante e estrutura refinada para compor looks sofisticados.</p>
+    <div class="product-footer">
+      <span class="product-price">R$ 239,90</span>
+      <div class="product-sizes">
+        <span class="size-chip">Único</span>
+      </div>
+    </div>
+    <a
+      class="product-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://wa.me/5561986474665?text=Olá! Tenho interesse no acessório Bolsa Premium Nude.">
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+<div class="product-card" data-page="acessorios" data-category="Bonés" data-name="Boné Street Black">
             <div class="product-img">
               <img src="camisa-2.jpg" alt="Boné Street Black" width="400" height="533" loading="lazy">
               <span class="product-category">Bonés</span>
@@ -435,7 +1087,25 @@
               </a>
             </div>
           </div>
-
+           <div class="product-card" data-page="acessorios" data-category="Bonés" data-name="Boné Street Black">
+            <div class="product-img">
+              <img src="camisa-2.jpg" alt="Boné Street Black" width="400" height="533" loading="lazy">
+              <span class="product-category">Bonés</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Boné Street Black</h3>
+              <p class="product-desc">Visual urbano com ajuste confortável para uso diário.</p>
+              <div class="product-footer">
+                <span class="product-price">R$ 89,90</span>
+                <div class="product-sizes">
+                  <span class="size-chip">Único</span>
+                </div>
+              </div>
+              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse no acessório Boné Street Black.">
+                Pedir no WhatsApp
+              </a>
+            </div>
+          </div>
           <div class="product-card" data-page="acessorios" data-category="Óculos" data-name="Óculos Urban Gold">
             <div class="product-img">
               <img src="camisa-3.jpg" alt="Óculos Urban Gold" width="400" height="533" loading="lazy">
@@ -455,7 +1125,25 @@
               </a>
             </div>
           </div>
-
+           <div class="product-card" data-page="acessorios" data-category="Óculos" data-name="Óculos Urban Gold">
+            <div class="product-img">
+              <img src="camisa-3.jpg" alt="Óculos Urban Gold" width="400" height="533" loading="lazy">
+              <span class="product-category">Óculos</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Óculos Urban Gold</h3>
+              <p class="product-desc">Design marcante com toque moderno e acabamento elegante.</p>
+              <div class="product-footer">
+                <span class="product-price">R$ 169,90</span>
+                <div class="product-sizes">
+                  <span class="size-chip">Único</span>
+                </div>
+              </div>
+              <a class="product-whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/5561986474665?text=Olá! Tenho interesse no acessório Óculos Urban Gold.">
+                Pedir no WhatsApp
+              </a>
+            </div>
+          </div>
           <div class="product-card" data-page="acessorios" data-category="Relógios" data-name="Relógio Classic Silver">
             <div class="product-img">
               <img src="camisa-4.jpg" alt="Relógio Classic Silver" width="400" height="533" loading="lazy">
@@ -475,7 +1163,6 @@
               </a>
             </div>
           </div>
-
           <div class="product-card" data-page="acessorios" data-category="Bolsas" data-name="Bolsa Mini Lux">
             <div class="product-img">
               <img src="camisa-5.jpg" alt="Bolsa Mini Lux" width="400" height="533" loading="lazy">
@@ -495,7 +1182,6 @@
               </a>
             </div>
           </div>
-
           <div class="product-card" data-page="acessorios" data-category="Bonés" data-name="Boné Signature Beige">
             <div class="product-img">
               <img src="camisa-6.webp" alt="Boné Signature Beige" width="400" height="533" loading="lazy">
@@ -515,17 +1201,14 @@
               </a>
             </div>
           </div>
-
         </div>
       </div>
-
       <div class="empty-state" id="emptyState" hidden>
         <p>Nenhum produto encontrado com esse filtro.</p>
       </div>
     </div>
   </div>
 </section>
-
 <section class="localizacao">
   <div class="localizacao-grid">
     <div class="localizacao-info">
@@ -534,16 +1217,24 @@
         Riacho Fundo, Brasília - DF<br>
         Segunda a sexta, das 8h às 18h
       </p>
-      <a href="https://www.google.com/maps?q=Plano+Piloto+Brasília+DF" target="_blank" rel="noopener noreferrer" class="botao-cta">
+      <a href="https://www.google.com/maps?q=Plano+Piloto+Brasília+DF"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="botao-cta">
         Ver rota no Google Maps
       </a>
     </div>
     <div class="localizacao-mapa">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.122138599473!2d-48.050089799999995!3d-15.9026709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2dd3683a93ab%3A0xb0acc6770a317931!2sMH%20LUX!5e0!3m2!1spt-BR!2sbr!4v1785598794282!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.122138599473!2d-48.050089799999995!3d-15.9026709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2dd3683a93ab%3A0xb0acc6770a317931!2sMH%20LUX!5e0!3m2!1spt-BR!2sbr!4v1785598794282!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </div>
 </section>
-
 <section class="section contact-section" id="contato">
   <div class="container">
     <div class="contact-grid">
@@ -551,35 +1242,36 @@
         <p class="section-label">Atendimento</p>
         <h2>Fale com a gente</h2>
         <p>Para encomendas especiais, dúvidas sobre tamanhos ou qualquer informação, estamos aqui.</p>
-
         <div class="contact-items">
           <div class="contact-item">
             <div class="contact-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12 19.79 19.79 0 0 1 1.07 3.18 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="https://api.whatsapp.com/send/?phone=5561986474665&text=Ol%C3%A1%21+Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+as+pe%C3%A7as.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da loja">
+                 <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16.02 3C8.84 3 3 8.84 3 16.02c0 2.3.6 4.55 1.74 6.53L3 29l6.64-1.7A13 13 0 1 0 16.02 3Zm0 23.65c-2.08 0-4.1-.56-5.86-1.62l-.42-.25-3.94 1.01 1.05-3.84-.28-.45a10.62 10.62 0 1 1 9.45 5.15Zm5.82-7.96c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.52-.16-.74.16-.22.32-.85 1.05-1.04 1.27-.19.21-.39.24-.71.08-1.91-.96-3.17-1.71-4.43-3.88-.33-.57.33-.53.95-1.77.11-.22.06-.41-.03-.57-.08-.16-.74-1.78-1.01-2.43-.27-.65-.54-.56-.74-.57h-.63c-.22 0-.57.08-.87.41-.3.32-1.14 1.11-1.14 2.7s1.17 3.13 1.33 3.35c.16.21 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.9-.78 2.17-1.54.27-.76.27-1.42.19-1.55-.08-.14-.3-.22-.62-.38Z"/>
+  </svg>
+              </a>
             </div>
             <span>(61) 98647-4665 — WhatsApp</span>
           </div>
-
           <div class="contact-item">
             <div class="contact-icon">
               <a href="https://www.instagram.com/m.hlux/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da loja" class="social-link">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
                 </svg>
               </a>
             </div>
             <span>Instagram da loja: @m.hlux</span>
           </div>
-
           <div class="contact-item">
             <div class="contact-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <a href="https://www.google.com/maps?q=Plano+Piloto+Brasília+DF" target="_blank" rel="noopener noreferrer" aria-label="Localização da loja no Google Maps">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></a>
             </div>
             <span>Riacho Fundo, Brasília — DF</span>
           </div>
         </div>
       </div>
-
       <div class="contact-form">
         <p class="section-label form-label">Solicitar peça</p>
         <div class="form-group">
@@ -599,7 +1291,6 @@
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-inner">
     <span class="logo footer-logo">
@@ -612,8 +1303,6 @@
     <p class="footer-copy">© 2026 M.H Lux. Todos os direitos reservados.</p>
   </div>
 </footer>
-
 <script src="script.js" defer></script>
-
 </body>
 </html>
